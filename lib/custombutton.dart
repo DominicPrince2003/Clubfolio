@@ -15,18 +15,14 @@ class CustomButton extends StatelessWidget {
   final String r = '/wpage';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            maximumSize: Size(double.infinity, double.infinity),
-            backgroundColor: Colors.white,
-            side: BorderSide(color: color),
-            shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(140)))),
-        onPressed: () {
-          Navigator.pushNamed(context, r);
-        },
+    return OutlinedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, r);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(color: textColor),
+            borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Stack(
           children: [
             Container(
@@ -43,7 +39,7 @@ class CustomButton extends StatelessWidget {
                   ),
                 ),
               ),
-              height: 175,
+              height: 200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   color: color),
